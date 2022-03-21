@@ -34,7 +34,7 @@ class Auto:
     def cantidadAsientos(self):
         return len(list(filter(lambda x: x != None, self.asientos)))
 
-    def verficarIntegridad(self):
+    def verificarIntegridad(self):
         valido = True
         for asiento in self.asientos:
             if asiento != None:
