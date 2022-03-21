@@ -32,13 +32,14 @@ class Auto:
         self.registro = registro
     
     def cantidadAsientos(self):
-        return len(self.asientos)
+        return len(list(filter(lambda x: x != None, self.asientos)))
 
     def verficarIntegridad(self):
         valido = True
         for asiento in self.asientos:
-            if asiento.registro != self.resgistro:
-                valido = False
+            if asiento != None:
+                if asiento.registro != self.registro:
+                    valido = False
 
         if self.motor.registro != self.registro:
             valido = False
